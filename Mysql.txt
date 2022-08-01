@@ -1,0 +1,62 @@
+// Insert Data
+
+// Department
+
+INSERT INTO `vatsalk`.`Department` (`DepID`, `DepName`) VALUES ('1', 'CE');
+INSERT INTO `vatsalk`.`Department` (`DepID`, `DepName`) VALUES ('2', 'CSE');
+INSERT INTO `vatsalk`.`Department` (`DepID`, `DepName`) VALUES ('3', 'IT');
+INSERT INTO `vatsalk`.`Department` (`DepID`, `DepName`) VALUES ('4', 'EC');
+INSERT INTO `vatsalk`.`Department` (`DepID`, `DepName`) VALUES ('5', 'ME');
+
+// Employee
+
+INSERT INTO `vatsalk`.`Employee` (`EmpID`, `EmpName`, `EmpNo`, `DepID`, `EmpJoinDate`, `EmpEndDate`) VALUES ('1', 'chintan', '101', '1', '2021-09-01 00:00:00', '2022-10-01 00:00:00');
+INSERT INTO `vatsalk`.`Employee` (`EmpID`, `EmpName`, `EmpNo`, `DepID`, `EmpJoinDate`, `EmpEndDate`) VALUES ('2', 'rahul', '102', '2', '2022-05-30 00:00:00', '2022-03-01 00:00:00');
+INSERT INTO `vatsalk`.`Employee` (`EmpID`, `EmpName`, `EmpNo`, `DepID`, `EmpJoinDate`, `EmpEndDate`) VALUES ('3', 'ram', '103', '3', '2022-09-01 00:00:00', '2022-10-04 00:00:00');
+INSERT INTO `vatsalk`.`Employee` (`EmpID`, `EmpName`, `EmpNo`, `DepID`, `EmpJoinDate`, `EmpEndDate`) VALUES ('4', 'Shayam', '104', '4', '2021-04-12 00:00:00', '2022-07-03 00:00:00');
+INSERT INTO `vatsalk`.`Employee` (`EmpID`, `EmpName`, `EmpNo`, `DepID`, `EmpJoinDate`, `EmpEndDate`) VALUES ('5', 'mayank', '105', '5', '2022-06-31 00:00:00', '2022-09-02 00:00:00');
+
+// Salary
+
+INSERT INTO `vatsalk`.`Salary` (`SalID`, `EmpID`, `SalMonth`, `SalYear`, `SalAmount`, `SalGenratedDate`) VALUES ('1', '1', '04', '2022', '10000', '2022-04-06 00:00:00');
+INSERT INTO `vatsalk`.`Salary` (`SalID`, `EmpID`, `SalMonth`, `SalYear`, `SalAmount`, `SalGenratedDate`) VALUES ('2', '2', '06', '2021', '38000', '2022-04-12 00:00:00');
+INSERT INTO `vatsalk`.`Salary` (`SalID`, `EmpID`, `SalMonth`, `SalYear`, `SalAmount`, `SalGenratedDate`) VALUES ('3', '3', '02', '2022', '32000', '2022-04-31 00:00:00');
+INSERT INTO `vatsalk`.`Salary` (`SalID`, `EmpID`, `SalMonth`, `SalYear`, `SalAmount`, `SalGenratedDate`) VALUES ('4', '4', '05', '2021', '72000', '2022-04-15 00:00:00');
+INSERT INTO `vatsalk`.`Salary` (`SalID`, `EmpID`, `SalMonth`, `SalYear`, `SalAmount`, `SalGenratedDate`) VALUES ('5', '5', '03', '2022', '36000', '2022-04-09 00:00:00');
+
+
+// query to get all employees details along with  department and salary details
+
+SELECT e.EmpID, e.EmpName, e.EmpNo, d.DepID`, e.EmpJoinDate, e.EmpEndDate FROM employees e department d WHERE e.EmpID = d.DepID;
+
+
+
+// Update Data
+
+// Department
+
+UPDATE `vatsalk`.`Department` SET `DepID` = '5' WHERE (`DepID` = '4');
+
+// Employee
+
+UPDATE `vatsalk`.`Employee` SET `EmpID` = '5', `EmpName` = 'montu', `DepID` = '5', `EmpJoinDate` = '2022-06-21 00:00:00' WHERE (`EmpID` = '4') and (`DepID` = '4');
+
+// Salary
+
+UPDATE `vatsalk`.`Salary` SET `SalID` = '5', `EmpID` = '5', `SalMonth` = '3', `SalAmount` = '50000' WHERE (`SalID` = '4') and (`EmpID` = '4');
+
+
+
+// Delete Data
+
+// Department
+
+DELETE FROM `vatsalk`.`Department` WHERE (`DepID` = '5');
+
+// Employee
+
+DELETE FROM `vatsalk`.`Employee` WHERE (`EmpID` = '5') and (`DepID` = '5');
+
+// Salary
+
+DELETE FROM `vatsalk`.`Salary` WHERE (`SalID` = '5') and (`EmpID` = '5');
